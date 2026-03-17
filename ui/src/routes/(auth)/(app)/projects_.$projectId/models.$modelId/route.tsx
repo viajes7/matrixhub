@@ -10,6 +10,7 @@ import {
   useMatchRoute,
   createFileRoute,
 } from '@tanstack/react-router'
+import Markdown from 'react-markdown'
 
 export const Route = createFileRoute(
   '/(auth)/(app)/projects_/$projectId/models/$modelId',
@@ -66,6 +67,14 @@ function ModelLayout() {
       <Container size="xl" w="100%" p={0}>
         <Outlet />
       </Container>
+
+      <Markdown>
+        {
+          '### title\n'
+          + '- list item 1\n'
+          + '- list item 2'
+        }
+      </Markdown>
     </Stack>
   )
 }
